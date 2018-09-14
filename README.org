@@ -1,0 +1,41 @@
+Ideas for students of https://github.com/igorsteinmacher/CS499-2018
+- For a student with C++ skills, also interested in R package
+  development. See
+  https://github.com/rstats-gsoc/gsoc2018/wiki/Segmentor3IsBack
+- For a student who is interested in optimization
+  algorithms. [[http://github.com/tdhock/directlabels]] is an R package
+  for label positioning in plots. Code a replacement for the [[http://directlabels.r-forge.r-project.org/docs/utility.function/posfuns/qp.labels.html][qp.labels]]
+  function that solves the Quadratic Program but does NOT depend on
+  quadprog (thus avoiding a dependency on compiled code).
+- For somebody who knows a little R and would like to help writing
+  documentation. https://github.com/tdhock/animint is an R package for
+  *anim*ated *int*eractive graphics and there I wrote an extensive
+  Designer Manual at
+  http://members.cbio.mines-paristech.fr/~thocking/animint-book/Ch02-ggplot2.html. We
+  have a new backwards-incompatible version of the package
+  https://github.com/tdhock/animint2 which has fewer dependencies and
+  is thus easier to install, but we haven't yet ported the Designer
+  Manual to the new package syntax. That would be the goal of this
+  project, source code of the Manual is here
+  https://github.com/tdhock/animint-book
+- For somebody with JavaScript coding skills, who wants to work on
+  interactive graphics, see ideas list here
+  https://github.com/rstats-gsoc/gsoc2018/wiki/Animated-interactive-ggplots
+- For somebody with C coding experience, or who wants to just help fix
+  issues in a big project. Fix some issues in [[https://github.com/Rdatatable/data.table/wiki][data.table]] which is one
+  of the most-used R packages. Here is a description from the primary
+  author Matt Dowle
+  https://github.com/rstats-gsoc/gsoc2018/wiki/data.table
+- For somebody with a windows
+  machine. https://github.com/tdhock/PeakSegPipeline is an R package
+  implementing some machine learning algorithms for genomic data
+  classification. Right now it is installable from github, and I have
+  tested on several GNU/Linux systems. But we eventually want to put
+  it on CRAN, in which case it would be good if it works on windows as
+  well. Set up [[https://www.appveyor.com/][AppVeyor]] with a windows test environment to do the same
+  tests as we already have on Travis. 
+- For somebody with C++ coding experience. Re-write the C++ code in
+  https://github.com/tdhock/PeakSegPipeline so that it still works,
+  but no longer depends on Berkeley DB (which seems to be a pain to
+  install on many systems so this would make the package more
+  portable).
