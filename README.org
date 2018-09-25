@@ -39,3 +39,13 @@ Ideas for students of https://github.com/igorsteinmacher/CS499-2018
   but no longer depends on Berkeley DB (which seems to be a pain to
   install on many systems so this would make the package more
   portable).
+- For somebody interested in cluster computing. Currently
+  https://github.com/tdhock/PeakSegPipeline has support for
+  parallelization on a cluster with qsub. However at NAU on monsoon we
+  have another system/program for cluster job submission, sbatch. This
+  project would be to re-write the PeakSegPipeline code in order to
+  support both. Two ideas about how to do that: (1) [[https://bitbucket.org/mugqic/genpipes][GenPipes]] (2)
+  [[https://github.com/mllg/batchtools/issues/204][batchtools]]. Would be best to have dependencies between jobs, as
+  documented on the steps in the PeakSegPipeline README. Currently it
+  seems like batchtools does not support dependencies -- maybe this
+  project could implement support for dependencies in batchtools?
