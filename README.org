@@ -2,11 +2,16 @@ Ideas for students of https://github.com/igorsteinmacher/CS499-2018
 - For a student with C++ skills, also interested in R package
   development. See
   https://github.com/rstats-gsoc/gsoc2018/wiki/Segmentor3IsBack
-- For a student who is interested in optimization
-  algorithms. [[http://github.com/tdhock/directlabels]] is an R package
-  for label positioning in plots. Code a replacement for the [[http://directlabels.r-forge.r-project.org/docs/utility.function/posfuns/qp.labels.html][qp.labels]]
-  function that solves the Quadratic Program but does NOT depend on
-  quadprog (thus avoiding a dependency on compiled code).
+- For a student who wants to work on a machine learning R package with
+  C++ coding. https://github.com/anujkhare/iregnet/pull/54 needs some
+  C++ debugging -- why do we get NAN errors when there are only a few
+  distinct values of features? After merging that PR, getting the
+  package ready for CRAN submission would be great.
+- For a student who is interested in coding an optimization algorithm
+  in pure R code. [[http://github.com/tdhock/directlabels]] is an R
+  package for label positioning in plots. Code a replacement for the
+  [[http://directlabels.r-forge.r-project.org/docs/utility.function/posfuns/qp.labels.html][qp.labels]] function that solves the Quadratic Program but does NOT
+  depend on quadprog (thus avoiding a dependency on compiled code).
 - For somebody who knows a little R and would like to help writing
   documentation. https://github.com/tdhock/animint is an R package for
   *anim*ated *int*eractive graphics and there I wrote an extensive
@@ -21,21 +26,16 @@ Ideas for students of https://github.com/igorsteinmacher/CS499-2018
 - For somebody with JavaScript coding skills, who wants to work on
   interactive graphics, see ideas list here
   https://github.com/rstats-gsoc/gsoc2018/wiki/Animated-interactive-ggplots
-- For somebody with C coding experience, or who wants to just help fix
-  issues in a big project. Fix some issues in [[https://github.com/Rdatatable/data.table/wiki][data.table]] which is one
-  of the most-used R packages. Here is a description from the primary
-  author Matt Dowle
-  https://github.com/rstats-gsoc/gsoc2018/wiki/data.table
 - For somebody with a windows
-  machine. https://github.com/tdhock/PeakSegPipeline is an R package
-  implementing some machine learning algorithms for genomic data
-  classification. Right now it is installable from github, and I have
-  tested on several GNU/Linux systems. But we eventually want to put
-  it on CRAN, in which case it would be good if it works on windows as
+  machine. https://github.com/tdhock/PeakSegDisk is an R package
+  implementing a fast dynamic programming algorithm for genomic data
+  analysis. Right now it is installable from github, and I have tested
+  on several GNU/Linux systems. But we eventually want to put it on
+  CRAN, in which case it would be good if it works on windows as
   well. Set up [[https://www.appveyor.com/][AppVeyor]] with a windows test environment to do the same
-  tests as we already have on Travis. 
+  tests as we already have on Travis.
 - For somebody with C++ coding experience. Re-write the C++ code in
-  https://github.com/tdhock/PeakSegPipeline so that it still works,
+  https://github.com/tdhock/PeakSegDisk so that it still works,
   but no longer depends on Berkeley DB (which seems to be a pain to
   install on many systems so this would make the package more
   portable).
@@ -43,9 +43,21 @@ Ideas for students of https://github.com/igorsteinmacher/CS499-2018
   https://github.com/tdhock/PeakSegPipeline has support for
   parallelization on a cluster with qsub. However at NAU on monsoon we
   have another system/program for cluster job submission, sbatch. This
-  project would be to re-write the PeakSegPipeline code in order to
-  support both. Two ideas about how to do that: (1) [[https://bitbucket.org/mugqic/genpipes][GenPipes]] (2)
-  [[https://github.com/mllg/batchtools/issues/204][batchtools]]. Would be best to have dependencies between jobs, as
-  documented on the steps in the PeakSegPipeline README. Currently it
-  seems like batchtools does not support dependencies -- maybe this
-  project could implement support for dependencies in batchtools?
+  project would be to support both. Two ideas about how to do that:
+  - [[https://github.com/mllg/batchtools/issues/204][batchtools]] is the R interface to cluster systems, but it does not
+    support dependencies between jobs. Dependencies are needed in
+    order to simultaneously launch all [[https://github.com/tdhock/PeakSegPipeline#running-steps-of-the-pipeline-in-parallel][seven steps]]. Currently it seems
+    like batchtools does not support dependencies -- maybe this project
+    could implement support for dependencies in batchtools? 
+  - Otherwise you can just use [[https://bitbucket.org/mugqic/genpipes][GenPipes]] which is a python library that
+    generates shell scripts. It supports dependencies between
+    jobs. 
+  - Right now TEST_SUITE=pipeline-* on [[https://travis-ci.org/tdhock/PeakSegPipeline][Travis-CI]] just runs the R
+    pipeline() function, but it would be great if you could install
+    SLURM on the CI virtual machine, and test the actual job
+    submission code (with dependencies).
+- For somebody with C coding experience, or who wants to just help fix
+  issues in a big project. Fix some issues in [[https://github.com/Rdatatable/data.table/wiki][data.table]] which is one
+  of the most-used R packages. Here is a description from the primary
+  author Matt Dowle
+  https://github.com/rstats-gsoc/gsoc2018/wiki/data.table
