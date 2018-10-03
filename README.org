@@ -12,6 +12,8 @@ Ideas for students of https://github.com/igorsteinmacher/CS499-2018
   package for label positioning in plots. Code a replacement for the
   [[http://directlabels.r-forge.r-project.org/docs/utility.function/posfuns/qp.labels.html][qp.labels]] function that solves the Quadratic Program but does NOT
   depend on quadprog (thus avoiding a dependency on compiled code).
+  [[http://directlabels.r-forge.r-project.org/docs/lineplot/posfuns/first.polygons.html][example of plot labels which use this function]].
+- [[https://github.com/tdhock/directlabels/issues/16][fix directlabels issue#16]]: non-syntactic aes names.
 - For somebody who knows a little R and would like to help writing
   documentation. https://github.com/tdhock/animint is an R package for
   *anim*ated *int*eractive graphics and there I wrote an extensive
@@ -30,7 +32,7 @@ Ideas for students of https://github.com/igorsteinmacher/CS499-2018
   machine. https://github.com/tdhock/PeakSegDisk is an R package
   implementing a fast dynamic programming algorithm for genomic data
   analysis. Right now it is installable from github, and I have tested
-  on several GNU/Linux systems. But we eventually want to put it on
+  on several GNU/Linux and Mac systems. But we eventually want to put it on
   CRAN, in which case it would be good if it works on windows as
   well. Set up [[https://www.appveyor.com/][AppVeyor]] with a windows test environment to do the same
   tests as we already have on Travis.
