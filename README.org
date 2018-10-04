@@ -51,9 +51,9 @@ Ideas for students of https://github.com/igorsteinmacher/CS499-2018
     order to simultaneously launch all [[https://github.com/tdhock/PeakSegPipeline#running-steps-of-the-pipeline-in-parallel][seven steps]]. Currently it seems
     like batchtools does not support dependencies -- maybe this project
     could implement support for dependencies in batchtools? 
-  - Otherwise you can just use [[https://bitbucket.org/mugqic/genpipes][GenPipes]] which is a python library that
+  - Otherwise you can use [[https://bitbucket.org/mugqic/genpipes][GenPipes]] which is a python library that
     generates shell scripts. It supports dependencies between
-    jobs. 
+    jobs. I have already created [[https://bitbucket.org/mugqic/genpipes/pull-requests/18/supervised-chipseq/diff][a PR]] which I suggest you add to.
   - Right now TEST_SUITE=pipeline-* on [[https://travis-ci.org/tdhock/PeakSegPipeline][Travis-CI]] just runs the R
     pipeline() function, but it would be great if you could install
     SLURM on the CI virtual machine, and test the actual job
