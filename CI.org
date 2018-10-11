@@ -3,6 +3,7 @@
 Continuous Integration (CI) tools allow you to test your code after every push to GitHub. Testing includes unit tests, code coverage, performance tests, etc.
 
 CI is especially useful with [[https://en.wikipedia.org/wiki/Test-driven_development][Test-driven development]], which means you first push some tests, you get a failing build, then you push code until the tests pass, then you merge with master. Examples 
+- [[https://github.com/tdhock/WeightedROC/pull/4][A WeightedROC PR]]
 - [[https://github.com/tdhock/penaltyLearning/pull/4][A penaltyLearning PR]] with a first commit with a failing test that eventually gets fixed and merged.
 - [[https://github.com/tdhock/animint/pull/165][An animint PR]] with a first commit that has a test with a data viz that fails to render correctly.
 
@@ -30,16 +31,21 @@ CI is especially useful with [[https://en.wikipedia.org/wiki/Test-driven_develop
 - [[https://github.com/pandas-dev/pandas/pull/11386][My PR for named capture in pandas]]. Note that they use Continuous Deployment of their documentation. "only last thing: http://pandas-docs.github.io/pandas-docs-travis/ will have the built docs (may take a bit of time as Travis is sometimes queued). This builds all docs & doc-strings. Have a look and pls issue a followup-PR if anything needs clarification / formatting"
 - Use common sense -- don't always trust the CI build/test result. [[https://github.com/tdhock/animint2/pull/23#partial-pull-merging][A PR to animint2]] from my GSOC2018 student Vivek. The last commit only changes the NEWS file, so we know the red X failing build is actually a false negative. (problem with travis / build system)
 
-
-
 ** Services
+
 Different CI providers give you different amount of services for free. 
 
 I have used
-- [[https://travis-ci.org/][Travis]]
-- [[https://app.wercker.com][Wercker]]
+- [[https://travis-ci.org/][Travis]] -- sample config file [[https://github.com/tdhock/animint/blob/master/.travis.yml][.travis.yml]]
+- [[https://app.wercker.com][Wercker]] -- sample config file [[https://github.com/tdhock/animint/blob/master/wercker.yml][wercker.yml]]
 
 I have not used
 - [[https://www.appveyor.com/pricing/][AppVeyor]] (windows support)
 - [[https://circleci.com/pricing/][CircleCI]] (mac support)
 - [[https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/?nav=min][Azure DevOps]]
+
+** Exercises
+
+- Take one of my repos, e.g. [[https://github.com/tdhock/WeightedROC][WeightedROC]], fork it, set up another CI service. Hint: .travis.yml has support for "language: r" which essentially runs "R CMD check" on the command line -- in my WeightedROC repo you can run "bash [[https://github.com/tdhock/WeightedROC/blob/master/build.sh][build.sh]]" to do the essentially the same checks in the other CI service.
+- Setup a github repo for [[https://github.com/rstats-gsoc/gsoc2018/wiki/Segmentor3IsBack][Segmentor3IsBack]], with TravisCI for GNU/Linux testing, Appveyor for windows testing and Coveralls for code coverage.
+- Try test-driven development for the [[https://github.com/tdhock/oss-class-ideas][quadratic problem solver in R code]] project that I proposed. Begin by creating a PR with at least two tests that use the qp.labels function with known inputs and outputs. Pushing that test in a new PR should result in a passing green build. Now remove the dependency on quadprog from DESCRIPTION and NAMESPACE -- you should get a failing red build. Code the R version of the solver so that you get a passing green build.
