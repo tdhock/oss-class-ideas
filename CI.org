@@ -1,1 +1,17 @@
-[[Wikipedia][https://en.wikipedia.org/w/index.php?title=Continuous_integration&oldid=861935587]] defines
+** My practical definition
+
+Continuous integration tools allow you to test your code after every push to GitHub.
+
+** Wikipedia definition (more theoretical)
+- [[https://en.wikipedia.org/w/index.php?title=Continuous_integration&oldid=861935587][Wikipedia]] defines
+  continuous integration as "the practice of merging all developer working copies to a shared mainline several times a day."
+- "Continuous integration – the practice of frequently integrating one's new or changed code with the existing code repository – should occur frequently enough that no intervening window remains between commit and build, and such that no errors can arise without developers noticing them and correcting them immediately"
+- "Normal practice is to trigger these builds by every commit to a repository, rather than a periodically scheduled build"
+- Maintain a code repository: "the system should be buildable from a fresh checkout" in practice this means from git/github.
+- Automate the build: "A single command should have the capability of building the system"
+  - for R packages this is "R CMD build"
+  - for many projects this is "make"
+- Make the build self-testing: "all tests should run to confirm that it behaves as the developers expect"
+- Everyone commits to master every day: "By committing regularly, every committer can reduce the number of conflicting changes." This is true but every day is a bit much -- in practice we often create branches and pull requests which are not merged with master every day. However the "PR" travis tests attempt a merge with master before testing, which hopefully will let you know if there is a conflicting change on your branch.
+- Keep the build fast: "The build needs to complete rapidly, so that if there is a problem with integration, it is quickly identified." tests must finish relatively quickly for your package to be accepted on the central R package distribution network (CRAN).
+- Everyone can see the results of the latest build: "It should be easy to find out whether the build breaks and, if so, who made the relevant change and what that change was" absolutely.
