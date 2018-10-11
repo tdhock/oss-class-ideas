@@ -24,6 +24,9 @@ Continuous integration tools allow you to test your code after every push to Git
 - [[https://github.com/tdhock/directlabels/pull/17][A PR to directlabels last week]]. Note red X and green checkmark.
 - [[https://github.com/Rdatatable/data.table/pull/3093][A PR to data.table]] which is currently failing due to lack of code coverage.
 - [[https://github.com/pandas-dev/pandas/pull/11386][My PR for named capture in pandas]]. Note that they use Continuous Deployment of their documentation. "only last thing: http://pandas-docs.github.io/pandas-docs-travis/ will have the built docs (may take a bit of time as Travis is sometimes queued). This builds all docs & doc-strings. Have a look and pls issue a followup-PR if anything needs clarification / formatting"
+- Use common sense -- don't always trust the CI build/test result. [[https://github.com/tdhock/animint2/pull/23#partial-pull-merging][A PR to animint2]] from my GSOC2018 student Vivek. The last commit only changes the NEWS file, so we know the red X failing build is actually a false negative. (problem with travis / build system)
+
+
 
 ** Services
 Different CI providers give you different amount of services for free. 
