@@ -1,6 +1,10 @@
 ** My practical definition
 
-Continuous integration tools allow you to test your code after every push to GitHub. Testing includes unit tests, code coverage, performance tests, etc.
+Continuous Integration (CI) tools allow you to test your code after every push to GitHub. Testing includes unit tests, code coverage, performance tests, etc.
+
+CI is especially useful with [[https://en.wikipedia.org/wiki/Test-driven_development][Test-driven development]], which means you first push some tests, you get a failing build, then you push code until the tests pass, then you merge with master. Examples
+- [[https://github.com/tdhock/animint/pull/165][An animint PR]] with a first commit that has a test with a data viz that fails to render correctly. 
+- [[https://github.com/tdhock/penaltyLearning/pull/4][A penaltyLearning PR]] with a first commit with a failing test that eventually gets fixed and merged.
 
 ** Wikipedia definition (more theoretical)
 - [[https://en.wikipedia.org/w/index.php?title=Continuous_integration&oldid=861935587][Wikipedia]] defines
