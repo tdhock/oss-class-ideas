@@ -17,11 +17,24 @@ CI is especially useful with [[https://en.wikipedia.org/wiki/Test-driven_develop
   - for R packages this is "R CMD build"
   - for many projects this is "make"
 - Make the build self-testing: "all tests should run to confirm that it behaves as the developers expect"
-- Everyone commits to master every day: "By committing regularly, every committer can reduce the number of conflicting changes." This is true but every day is a bit much -- in practice we often create branches and pull requests which are not merged with master every day. However the "PR" travis tests attempt a merge with master before testing, which hopefully will let you know if there is a conflicting change on your branch.
+- Everyone commits to master every day: "By committing regularly,
+  every committer can reduce the number of conflicting changes." This
+  is true but every day is a bit much -- in practice we often create
+  branches and pull requests which are not merged with master every
+  day. However the "PR" travis tests attempt a merge with master
+  before testing, which hopefully will let you know if there is a
+  conflicting change on your branch.
 - Keep the build fast: "The build needs to complete rapidly, so that if there is a problem with integration, it is quickly identified." tests must finish relatively quickly for your package to be accepted on the central R package distribution network (CRAN).
 - Everyone can see the results of the latest build: "It should be easy to find out whether the build breaks and, if so, who made the relevant change and what that change was" absolutely.
 - Automate deployment: "write a script to deploy the application to a live test server that everyone can look at" after the build finishes.
 - in my opinion the major benefit is: "Immediate feedback on system-wide impact of local changes"
+
+** Questions
+
+- What is the difference between the PR and the push build?
+- Yesterday: master has test t1, you forked a branch, made a PR, and
+  added test t2. Meanwhile somebody else has added test t3 to
+  master. Which tests are run on the push build? On the PR build?
 
 ** Examples
 
