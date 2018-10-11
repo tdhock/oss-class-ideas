@@ -13,7 +13,6 @@ Ideas for students of https://github.com/igorsteinmacher/CS499-2018
   [[http://directlabels.r-forge.r-project.org/docs/utility.function/posfuns/qp.labels.html][qp.labels]] function that solves the Quadratic Program but does NOT
   depend on quadprog (thus avoiding a dependency on compiled code).
   [[http://directlabels.r-forge.r-project.org/docs/lineplot/posfuns/first.polygons.html][example of plot labels which use this function]].
-- [[https://github.com/tdhock/directlabels/issues/16][fix directlabels issue#16]]: non-syntactic aes names.
 - For somebody who knows a little R and would like to help writing
   documentation. https://github.com/tdhock/animint is an R package for
   *anim*ated *int*eractive graphics and there I wrote an extensive
