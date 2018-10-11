@@ -1,6 +1,6 @@
 ** My practical definition
 
-Continuous integration tools allow you to test your code after every push to GitHub.
+Continuous integration tools allow you to test your code after every push to GitHub. Testing includes unit tests, code coverage, performance tests, etc.
 
 ** Wikipedia definition (more theoretical)
 - [[https://en.wikipedia.org/w/index.php?title=Continuous_integration&oldid=861935587][Wikipedia]] defines
@@ -15,3 +15,24 @@ Continuous integration tools allow you to test your code after every push to Git
 - Everyone commits to master every day: "By committing regularly, every committer can reduce the number of conflicting changes." This is true but every day is a bit much -- in practice we often create branches and pull requests which are not merged with master every day. However the "PR" travis tests attempt a merge with master before testing, which hopefully will let you know if there is a conflicting change on your branch.
 - Keep the build fast: "The build needs to complete rapidly, so that if there is a problem with integration, it is quickly identified." tests must finish relatively quickly for your package to be accepted on the central R package distribution network (CRAN).
 - Everyone can see the results of the latest build: "It should be easy to find out whether the build breaks and, if so, who made the relevant change and what that change was" absolutely.
+- Automate deployment: "write a script to deploy the application to a live test server that everyone can look at" after the build finishes.
+- in my opinion the major benefit is: "Immediate feedback on system-wide impact of local changes"
+
+** Examples
+
+- [[https://github.com/tdhock/animint2/pull/17][A PR to animint2]] that is easy to understand.
+- [[https://github.com/tdhock/directlabels/pull/17][A PR to directlabels last week]]. Note red X and green checkmark.
+- [[https://github.com/Rdatatable/data.table/pull/3093][A PR to data.table]] which is currently failing due to lack of code coverage.
+- [[https://github.com/pandas-dev/pandas/pull/11386][My PR for named capture in pandas]]. Note that they use Continuous Deployment of their documentation. "only last thing: http://pandas-docs.github.io/pandas-docs-travis/ will have the built docs (may take a bit of time as Travis is sometimes queued). This builds all docs & doc-strings. Have a look and pls issue a followup-PR if anything needs clarification / formatting"
+
+** Services
+Different CI providers give you different amount of services for free. 
+
+I have used
+- [[https://travis-ci.org/][Travis]]
+- [[https://app.wercker.com][Wercker]]
+
+I have not used
+- [[https://www.appveyor.com/pricing/][AppVeyor]] (windows support)
+- [[https://circleci.com/pricing/][CircleCI]] (mac support)
+- [[https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/?nav=min][Azure DevOps]]
