@@ -1,0 +1,43 @@
+Overview of Google Summer of Code
+
+** Overview
+
+In short, each student selected for a GSoC project will get paid to
+work on a free/open-source software project for 3 months during the summer.
+
+Stats: https://developers.google.com/open-source/gsoc/resources/stats
+
+- There are lots of different [[https://summerofcode.withgoogle.com/organizations/][organizations]] that participate. I am an
+  administrator and mentor for the R project (which is one of the GSOC
+  mentoring organizations). Many well known free/open-source software
+  organizations participate (e.g. debian, fedora, Qt, Jenkins, gcc,
+  llvm, GNU, wine).
+- Each organization (e.g. [[https://github.com/rstats-gsoc/gsoc2019/wiki/table%2520of%2520proposed%2520coding%2520projects][R]]) has a project ideas page. Google will
+  post on their GSOC site a link to each accepted org's ideas page.
+- Students can use the proposed ideas to write their applications,
+  which must be submitted to google.
+- Each org has a number of mentors which will review the student
+  applications and rank them in order of priority.
+- Google gives each organization funding for the top N student
+  projects. (where N is different for each org)
+- Accepted students are expected to engage with the org's 
+  community during the bonding period (before coding starts).
+- Three months of coding during the summer. Typically this means daily
+  commits/pushes and weekly skype calls with mentors.
+- There are three "evaluations" during which students can fail.
+- Students who pass get paid a stipend by Google.
+- Mentors get code written for their project, but no money.
+
+** Official timelines
+
+https://summerofcode.withgoogle.com/how-it-works/
+
+https://developers.google.com/open-source/gsoc/timeline
+
+** Videos
+
+https://developers.google.com/open-source/gsoc/videos
+
+** Student responsibilities
+
+https://developers.google.com/open-source/gsoc/help/responsibilities
